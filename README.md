@@ -12,12 +12,8 @@ exporter opens the ZIP file and extracts the `ADUReport.xml` file. It
 then reports all of the active error conditions from all of the
 `<Errors/>` blocks.
 
-There are at least two other Prometheus metrics exporters for HP RAID
-controllers ([1](https://github.com/gdm85/hpraidmon),
-[2](https://github.com/chromium58/hpraid_exporter)). Both these
-exporters are built around the idea of parsing the utility's
-user-readable output using regular expressions, as opposed to relying on
-the utility's XML output. This makes them a lot more brittle.
+There are at least three other Prometheus metrics exporters for HP RAID
+controllers ([1](https://github.com/ProdriveTechnologies/hpraid_exporter, [2](https://github.com/gdm85/hpraidmon),[3](https://github.com/chromium58/hpraid_exporter)).
 
 Though this exporter only provide metrics for errors for the time being
 (`hpraid_errors`), it should be fairly easy to extend it to expose other
@@ -26,9 +22,9 @@ attributes. All of those metrics should already be part of the
 
 ## Building this exporter
 
-The exporter can be built using Bazel:
+The exporter can be built using plain bash script:
 
-    bazel build //...
+    bash build.sh
 
 ## Using this exporter
 
