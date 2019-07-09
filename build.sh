@@ -1,6 +1,6 @@
 #!/bin/bash
 export GOROOT=/usr/local/go
-export GOPATH=$(pwd)
+export GOPATH=/opt/ProdriveTechnologies/hpraid_exporter
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export PATH="$PATH:/usr/local/go/bin"
