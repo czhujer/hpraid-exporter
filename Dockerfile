@@ -4,7 +4,7 @@ WORKDIR /src
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-extldflags "-static"' -mod vendor -o hpraid-exporter .
 
-FROM alpine:3.10
+FROM ubuntu:18.04
 COPY --from=builder /src/hpraid-exporter /opt/hpraid-exporter
 
 ENTRYPOINT ["/opt/hpraid-exporter"]
