@@ -7,5 +7,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-extldflags "-static"' -mod vend
 FROM ubuntu:18.04
 COPY --from=builder /src/hpraid-exporter /opt/hpraid-exporter
 
-ENTRYPOINT ["/opt/hpraid-exporter"]
+COPY src/ssacli-3.40-3.0_amd64.deb ssacli-3.40-3.0_amd64.deb
 
+RUN dpkg -i ssacli-3.40-3.0_amd64.deb
+
+ENTRYPOINT ["/opt/hpraid-exporter"]
