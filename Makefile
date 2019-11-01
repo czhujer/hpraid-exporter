@@ -1,5 +1,5 @@
 IMAGE = registry.mallgroup.com/cc/hpraid_exporter
-VERSION = 0.2
+VERSION = 0.3
 
 .PHONY: _
 _: build publish
